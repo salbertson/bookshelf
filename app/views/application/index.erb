@@ -1,1 +1,5 @@
-woohoo
+<% if current_user %>
+  <%= link_to 'Add a feed', new_feed_path %>
+<% else %>
+  <%= link_to 'Sign in with GitHub', '/auth/github' %>
+<% end %>

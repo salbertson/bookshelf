@@ -7,6 +7,7 @@ gem 'delayed_job_active_record', '>= 4.0.0'
 gem 'email_validator'
 gem 'jquery-rails'
 gem 'neat'
+gem 'omniauth-github'
 gem 'pg'
 gem 'rack-timeout'
 gem 'rails', '>= 4.0.0'
@@ -17,12 +18,11 @@ gem 'uglifier'
 gem 'unicorn'
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'foreman'
 end
 
 group :development, :test do
+  gem 'debugger'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '>= 2.14'
 end
