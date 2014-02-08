@@ -12,18 +12,12 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = current_user.feeds.new(feed_params)
+    @feed = current_user.feeds.find_or_create_by(url: params[:feed][:url])
 
-    if @feed.save
+    if @feed.persisted?
       redirect_to root_path, notice: 'Feed was added!'
     else
       render :new
     end
-  end
-
-  private
-
-  def feed_params
-    params.require(:feed).permit(:name, :url)
   end
 end
