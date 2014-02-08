@@ -12,6 +12,8 @@ class Feed < ActiveRecord::Base
   private
 
   def parsed_feed
-    @parsed_feed ||= Feedzirra::Feed.fetch_and_parse(url)
+    @parsed_feed ||= Rails.cache.fetch(url) do
+      Feedzirra::Feed.fetch_and_parse(url)
+    end
   end
 end

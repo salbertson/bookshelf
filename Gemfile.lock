@@ -45,6 +45,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     curb (0.8.5)
+    dalli (2.7.0)
     database_cleaner (1.2.0)
     debugger (1.6.5)
       columnize (>= 0.3.1)
@@ -218,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bourbon
   capybara-webkit (>= 1.0.0)
+  dalli
   database_cleaner
   debugger
   delayed_job_active_record (>= 4.0.0)
