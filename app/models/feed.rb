@@ -18,7 +18,7 @@ class Feed < ActiveRecord::Base
         guid: entry.id,
         url: entry.url,
         title: entry.title.sanitize,
-        content: entry.content.sanitize,
+        content: (entry.content || entry.summary).sanitize,
         published_at: entry.published
       )
     end
