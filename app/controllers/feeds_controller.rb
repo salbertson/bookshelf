@@ -1,5 +1,11 @@
 class FeedsController < ApplicationController
-  before_filter :authorize_user
+  def index
+    @feeds = current_user.feeds
+  end
+
+  def show
+    @feed = current_user.feeds.find(params[:id])
+  end
 
   def new
     @feed = current_user.feeds.new

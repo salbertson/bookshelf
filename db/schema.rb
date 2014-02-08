@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20140207054829) do
     t.datetime "updated_at"
     t.integer  "user_id",    null: false
     t.string   "url",        null: false
-    t.string   "name",       null: false
   end
 
   create_table "users", force: true do |t|

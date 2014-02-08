@@ -1,7 +1,8 @@
 Bookshelf::Application.routes.draw do
-  root 'application#index'
+  root 'feeds#index'
 
   get '/auth/github/callback', to: 'sessions#create'
+  resource :session, only: [:new]
 
-  resources :feeds, only: [:new, :create]
+  resources :feeds, only: [:new, :create, :show]
 end

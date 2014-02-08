@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  skip_before_filter :authorize_user
+
+  def new
+  end
+
   def create
     user = User.find_or_create_by(username: username) do |user|
       user.email = email
