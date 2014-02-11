@@ -4,6 +4,7 @@
 @import "bitters/bitters";
 @import 'neat';
 
+$lame: new-breakpoint(max-width 750px 2);
 $mobile: new-breakpoint(max-width 480px 1);
 
 ul.feeds {
@@ -12,6 +13,10 @@ ul.feeds {
 
 li.feed {
   @include span-columns(3);
+
+  @include media($lame) {
+    @include span-columns(1);
+  }
 
   @include media($mobile) {
     @include span-columns(1);
