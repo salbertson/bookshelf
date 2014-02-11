@@ -1,8 +1,23 @@
 @charset 'utf-8';
 
-///////////////////////////////////////////////////////////////////////////////
-
 @import 'bourbon';
+@import "bitters/bitters";
 @import 'neat';
 
-///////////////////////////////////////////////////////////////////////////////
+$mobile: new-breakpoint(max-width 480px 1);
+
+ul.feeds {
+  @include outer-container;
+}
+
+li.feed {
+  @include span-columns(3);
+
+  @include media($mobile) {
+    @include span-columns(1);
+  }
+
+  a {
+    display: block;
+  }
+}
