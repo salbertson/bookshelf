@@ -13,9 +13,10 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = current_user.feeds.find_or_create_by(url: params[:feed][:url])
+    feed = Feed.where(url: params[:feed][:url]).first_or_initialize
+    current_user.feeds << feed
 
-    if @feed.persisted?
+    if current_user.feeds.include? feed
       redirect_to root_path, notice: 'Feed was added!'
     else
       render :new

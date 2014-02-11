@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authorize_user
-    redirect_to new_session_path unless session[:username]
+    unless User.exists?(username: session[:username])
+      redirect_to new_session_path
+    end
   end
 end

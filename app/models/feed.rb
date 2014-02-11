@@ -1,7 +1,7 @@
 class Feed < ActiveRecord::Base
-  belongs_to :user
-
   has_many :entries, dependent: :destroy
+  has_many :subscriptions
+  has_many :users, through: :subscriptions
 
   before_create :fetch_feed
 
