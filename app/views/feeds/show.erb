@@ -1,9 +1,9 @@
 <h1><%= @feed.title %></h1>
 
 <ul>
-  <%= render collection: @feed.entries.map(&:title), partial: 'entry_title' %>
+  <%= render collection: @entries.map(&:title), partial: 'entry_title' %>
 </ul>
 
 <ul>
-  <%= render collection: @feed.entries, partial: 'entry' %>
+  <%= render collection: @entries, partial: 'entry' %>
 </ul>
