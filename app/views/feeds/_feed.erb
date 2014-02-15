@@ -1,3 +1,5 @@
-<li class="feed">
-  <%= link_to feed.title, feed_path(feed) %>
-</li>
+<%= link_to feed_path(feed) do %>
+  <li class="feed">
+    <%= feed.title %>
+  </li>
+<% end %>

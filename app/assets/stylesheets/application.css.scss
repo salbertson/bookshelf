@@ -4,25 +4,64 @@
 @import "bitters/bitters";
 @import 'neat';
 
-$lame: new-breakpoint(max-width 750px 2);
-$mobile: new-breakpoint(max-width 480px 1);
+$nav-height: 40px;
+$nav-font-size: 1em;
+$gutter-size: 1.3em;
+$mobile: new-breakpoint(max-width 650px 1);
 
-ul.feeds {
+body {
   @include outer-container;
 }
 
-li.feed {
-  @include span-columns(3);
-
-  @include media($lame) {
-    @include span-columns(1);
-  }
-
+.navigation {
+  @include span-columns(4);
   @include media($mobile) {
     @include span-columns(1);
   }
 
+  height: $nav-height;
+  margin-bottom: $gutter-size;
+  background: lighten($light-gray, 7);
+  line-height: $nav-height;
+  text-align: center;
+  font-size: $nav-font-size;
+}
+
+.title {
+  @include span-columns(8);
+  @include omega();
+  @include media($mobile) {
+    @include span-columns(1);
+  }
+
+  height: $nav-height;
+  margin-bottom: $gutter-size;
+  background: lighten($light-gray, 7);
+  line-height: $nav-height;
+  text-align: center;
+  font-size: $nav-font-size;
+}
+
+ul.feeds, ul.entry-titles {
+  @include clearfix;
+
   a {
-    display: block;
+    @include span-columns(4);
+    @include omega(3n);
+    @include media($mobile) {
+      @include span-columns(1);
+    }
+
+    margin-bottom: $gutter-size;
+
+    li.feed, li.entry-title {
+      font-size: 2em;
+      line-height: 1.5;
+      background: lighten($light-gray, 7);
+      padding: 20px;
+      height: 7em;
+      text-align: left;
+      overflow: hidden;
+    }
   }
 }

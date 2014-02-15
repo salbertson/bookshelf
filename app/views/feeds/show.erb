@@ -1,11 +1,11 @@
-<%= link_to 'feeds', root_path %>
+<%= link_to 'Feeds', root_path, class: 'navigation' %>
 
-<h1><%= @feed.title %></h1>
+<h1 class="title"><%= @feed.title %></h1>
 
-<ul>
+<ul class="entry-titles">
   <%= render collection: @entries.map(&:title), partial: 'entry_title' %>
 </ul>
 
-<ul>
+<ul class="entries">
   <%= render collection: @entries, partial: 'entry' %>
 </ul>
