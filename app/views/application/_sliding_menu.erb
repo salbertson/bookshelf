@@ -1,0 +1,30 @@
+<button type="button" class="js-menu-trigger sliding-menu-button">
+  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+</button>
+
+<nav class="js-menu sliding-menu-content">
+  <ul>
+    <%= render partial: 'feed_menu_item', collection: feeds, as: 'feed' %>
+  </ul>
+</nav>
+
+<div class="js-menu-screen menu-screen"></div>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.js-menu-trigger').on('click touchstart', function(e){
+        $('.js-menu').toggleClass('is-visible');
+        $('.js-menu-screen').toggleClass('is-visible');
+        e.preventDefault();
+      });
+
+      $('.js-menu-screen').on('click touchstart', function(e){
+        $('.js-menu').toggleClass('is-visible');
+        $('.js-menu-screen').toggleClass('is-visible');
+        e.preventDefault();
+      });
+    });
+  </script>
+<% end %>
+
