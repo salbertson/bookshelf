@@ -17,7 +17,7 @@ class FeedsController < ApplicationController
     current_user.feeds << feed
 
     if current_user.feeds.include? feed
-      redirect_to root_path, notice: 'Feed was added!'
+      redirect_to root_path, success: 'Feed was added!'
     else
       render :new
     end

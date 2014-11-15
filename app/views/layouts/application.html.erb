@@ -6,10 +6,15 @@
   <title>Bookshelf</title>
   <%= stylesheet_link_tag :application, :media => 'all' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <%= render 'flashes' -%>
-  <%= yield %>
+  <%= render 'header' if current_user %>
+  <div class='body-wrapper'>
+    <%= render 'flashes' %>
+    <%= yield %>
+  </div>
   <%= render 'javascript' %>
 </body>
 </html>

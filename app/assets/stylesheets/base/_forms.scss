@@ -79,6 +79,7 @@ select {
   margin-bottom: $base-line-height;
 }
 
+.button,
 button,
 input[type="submit"] {
   @extend %button;
@@ -87,4 +88,8 @@ input[type="submit"] {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+
+  &:hover {
+    color: white;
+  }
 }

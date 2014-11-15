@@ -1,11 +1,5 @@
-<%= link_to 'Feeds', root_path, class: 'navigation' %>
-
-<h1 class="title"><%= @feed.title %></h1>
-
-<ul class="entry-titles">
-  <%= render collection: @entries.map(&:title), partial: 'entry_title' %>
-</ul>
-
-<ul class="entries">
-  <%= render collection: @entries, partial: 'entry' %>
-</ul>
+<div class="grid-items-lines">
+  <%= render @entries %>
+  <div class="right-cover"></div>
+  <div class="bottom-cover"></div>
+</div>

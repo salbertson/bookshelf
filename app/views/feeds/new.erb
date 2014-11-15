@@ -1,4 +1,6 @@
-<%= simple_form_for @feed do |form| %>
-  <%= form.input :url %>
-  <%= form.button :submit %>
-<% end %>
+<fieldset>
+  <%= simple_form_for @feed do |form| %>
+    <%= form.input :url, label: 'Feed URL' %>
+    <%= form.button :submit, 'Add Feed' %>
+  <% end %>
+</fieldset>
