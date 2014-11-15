@@ -18,6 +18,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def delete
+    session['username'] = nil
+    redirect_to root_path
+  end
+
   private
 
   def username

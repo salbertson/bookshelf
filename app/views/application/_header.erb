@@ -8,7 +8,23 @@
       <li class="nav-link">
         <%= link_to 'New Feed', new_feed_path %>
       </li>
-      <li class="nav-link"><a href="javascript:void(0)">Sign Out</a></li>
+      <li class="nav-link"><%= link_to 'Sign Out', sign_out_path %></li>
     </ul>
   </div>
 </header>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    var menu = $('.centered-navigation-menu');
+    var menuToggle = $('.centered-navigation-menu-button');
+
+    $(menuToggle).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle(function(){
+        if(menu.is(':hidden')) {
+          menu.removeAttr('style');
+        }
+      });
+    });
+  </script>
+<% end %>

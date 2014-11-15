@@ -2,8 +2,12 @@
   margin-top: 40px;
 
   form {
-    width: 50%;
     margin: auto;
+    padding: 10px;
+
+    @include media($large-screen) {
+      width: 50%;
+    }
   }
 
   label {
