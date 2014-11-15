@@ -17,7 +17,8 @@ class FeedsController < ApplicationController
     current_user.feeds << feed
 
     if current_user.feeds.include? feed
-      redirect_to root_path, success: 'Feed was added!'
+      flash[:success] = 'The feed was added!'
+      redirect_to root_path
     else
       render :new
     end

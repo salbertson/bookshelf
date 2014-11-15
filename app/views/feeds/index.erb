@@ -1,5 +1,11 @@
-<div class="grid-items-lines">
-  <%= render @feeds %>
-  <div class="right-cover"></div>
-  <div class="bottom-cover"></div>
-</div>
+<% if @feeds.any? %>
+  <div class="grid-items-lines">
+    <%= render @feeds %>
+    <div class="right-cover"></div>
+    <div class="bottom-cover"></div>
+  </div>
+<% else %>
+  <div class="empty-grid">
+    <%= link_to 'Add your first feed', new_feed_path, class: 'button' %>
+  </div>
+<% end %>

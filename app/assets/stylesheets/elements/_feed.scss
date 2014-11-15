@@ -1,0 +1,17 @@
+.new-feed {
+  margin-top: 40px;
+
+  form {
+    width: 50%;
+    margin: auto;
+  }
+
+  label {
+    margin-bottom: 14px;
+  }
+
+  input[type=url] {
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+}
