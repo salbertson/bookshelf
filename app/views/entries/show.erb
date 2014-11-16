@@ -1,7 +1,7 @@
 <%= render 'sliding_menu', feeds: current_user.feeds %>
 
 <article>
-  <p class="type"><%= @entry.feed_title %></p>
+  <p class="type"><%= link_to @entry.feed_title, feed_path(@entry.feed) %></p>
   <h1><%= @entry.title %></h1>
   <p class="date"><%= @entry.published_at.to_date.to_s(:long) %></p>
   <%= raw @entry.content %>
