@@ -13,9 +13,14 @@ $sliding-menu-color-hover: #fff;
   top: 11px;
   left: 11px;
   padding: 0.5em 0.7em;
+  background-color: $centered-navigation-background;
 
   img {
     height: 1.3em;
+  }
+
+  &:hover {
+    background-color: white;
   }
 
   @include media(max-width $large-screen) {
