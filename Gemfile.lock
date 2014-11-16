@@ -94,6 +94,8 @@ GEM
     kgio (2.9.1)
     launchy (2.4.2)
       addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     loofah (1.2.1)
       nokogiri (>= 1.4.4)
     mail (2.5.4)
@@ -232,6 +234,7 @@ DEPENDENCIES
   foreman
   jquery-rails
   launchy
+  letter_opener
   neat
   omniauth-github
   pg

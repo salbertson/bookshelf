@@ -1,0 +1,10 @@
+<%= entry.title %>
+----------------------------------------------
+<%= entry.feed_title %>
+
+<%= truncate(strip_tags(entry.content), length: 100, omission: "...") %>
+
+<%= feed_entry_url(entry.feed, entry) %>
+
+
+
