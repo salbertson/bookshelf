@@ -6,7 +6,7 @@ class Mailer < ActionMailer::Base
 
     mail(
       to: user.email,
-      subject: "New entries in the last week"
+      subject: "New Bookshelf entries"
     )
   end
 end
