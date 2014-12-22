@@ -4,5 +4,5 @@
 </p>
 <p>
   <%= truncate(strip_tags(entry.content), length: 100, omission: "...") %>
-  <%= link_to 'Read Entry', feed_entry_url(entry.feed, entry) %>
+  <%= link_to 'Read More', entry.url %>
 </p>
