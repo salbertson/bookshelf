@@ -1,8 +1,8 @@
 article {
   @include clearfix;
-  text-align: left
-  font-size: 1.2em
-  padding: 20px
+  text-align: left;
+  font-size: 1.2em;
+  padding: 20px;
 
   .type {
     border-bottom: 1px solid;
@@ -16,11 +16,11 @@ article {
     text-transform: uppercase;
 
     a {
-      color: $base-font-color;
+      color: red;
     }
 
     a:hover {
-      color: $base-accent-color;
+      color: red;
     }
   }
 
